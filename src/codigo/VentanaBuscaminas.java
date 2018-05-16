@@ -36,6 +36,7 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
                         botonPulsado(evt);
                     }
                 });
+               
             }
         }
         ponMinas(30);
