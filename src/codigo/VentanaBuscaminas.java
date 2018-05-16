@@ -4,6 +4,8 @@ import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Random;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
@@ -14,6 +16,8 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
     int filas = 15;
     int columnas = 20;
     int numeroMinas;
+    Icon bandera = new ImageIcon(getClass().getResource("/images/bandera.png"));
+    Icon bomba = new ImageIcon(getClass().getResource("/images/bomba.png"));
     
     Boton[][] arrayBotones = new Boton[filas][columnas];
     
@@ -47,7 +51,7 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
         
         Boton miBoton = (Boton) e.getComponent();
         if(e.getButton() == MouseEvent.BUTTON3){
-            miBoton.setText("?");
+            miBoton.setIcon(bandera);
         } else{
             
         }
