@@ -1,5 +1,6 @@
 package codigo;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -16,7 +17,7 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
 
     int filas = 15;
     int columnas = 20;
-    int numeroMinas = 30;
+    int numeroMinas = 100;
     Icon bandera = new ImageIcon(getClass().getResource("/images/bandera.png"));
     Icon bomba = new ImageIcon(getClass().getResource("/images/bomba.png"));
 
@@ -53,12 +54,14 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
     private void botonPulsado(MouseEvent e) {
 
         Boton miBoton = (Boton) e.getComponent();
-        if (e.getButton() == MouseEvent.BUTTON3) {
+        if (e.getButton() == MouseEvent.BUTTON3 && miBoton.isEnabled()) {
             miBoton.setIcon(bandera);
         }
         if (e.getButton() == MouseEvent.BUTTON1 && miBoton.getText().equals("")) {
             if (miBoton.getMina() == 1) {
                 miBoton.setIcon(bomba);
+                miBoton.setOpaque(false);
+                miBoton.setBackground(Color.BLACK);
             } else if (miBoton.getNumeroMinasAlrededor() == 0) {
                 miBoton.setFocusPainted(false);
                 cambia(miBoton);
@@ -103,7 +106,7 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
             //TODO hay que hacer una version que chequee si en la casilla seleccionada ya hay una mina, 
             //porque en ese caso tiene que buscar otra
             arrayBotones[f][c].setMina(1);
-            arrayBotones[f][c].setIcon(bomba);
+//            arrayBotones[f][c].setIcon(bomba);
         }
     }
 
@@ -129,7 +132,7 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
 //                    }
 //                }
                 minas = 0;
-//                
+                
 //                if(arrayBotones[i][j].getMina() == 1 ){
 //                    arrayBotones[i][j].setText("");
 //                }
