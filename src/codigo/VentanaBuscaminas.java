@@ -23,11 +23,9 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
 
     Boton[][] arrayBotones = new Boton[filas][columnas];
 
-    /**
-     * Crea VentanaBuscaminas
-     */
     public VentanaBuscaminas() {
         initComponents();
+        setLocationRelativeTo(null);
         setSize(800, 600);
         getContentPane().setLayout(new GridLayout(filas, columnas));
         for (int i = 0; i < filas; i++) {
@@ -84,6 +82,7 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
                     }
                 }
             }
+            jDialog1.setLocationRelativeTo(this);
             jDialog1.setSize(400, 400);
             jDialog1.setVisible(true);
             
@@ -122,8 +121,7 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
             //TODO hay que hacer una version que chequee si en la casilla seleccionada ya hay una mina, 
             //porque en ese caso tiene que buscar otra
             arrayBotones[f][c].setMina(1);
-            arrayBotones[f][c].setText("");
-//            arrayBotones[f][c].setIcon(bomba); oculto las bombas
+//            arrayBotones[f][c].setIcon(bomba); // oculto las bombas
         }
     }
 
