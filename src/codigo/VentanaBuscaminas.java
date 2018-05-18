@@ -25,7 +25,6 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
 
     public VentanaBuscaminas() {
         initComponents();
-        setLocationRelativeTo(null);
         setSize(800, 600);
         getContentPane().setLayout(new GridLayout(filas, columnas));
         for (int i = 0; i < filas; i++) {
@@ -81,8 +80,7 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
                         arrayBotones[i][j].setText("");
                     }
                 }
-            }
-            jDialog1.setLocationRelativeTo(this);
+            } 
             jDialog1.setSize(400, 400);
             jDialog1.setVisible(true);
             
