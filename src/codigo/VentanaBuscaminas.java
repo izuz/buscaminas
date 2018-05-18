@@ -101,10 +101,9 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
                             if (arrayBotones[boton.getI() + k][boton.getJ() + m].getNumeroMinasAlrededor() == 0) {
                                 arrayBotones[boton.getI() + k][boton.getJ() + m].setEnabled(false);
                                 cambia(arrayBotones[boton.getI() + k][boton.getJ() + m]);
-                            } else if (arrayBotones[boton.getI() + k][boton.getJ() + m].getNumeroMinasAlrededor() != 0) {
+                            }else{
                                 arrayBotones[boton.getI() + k][boton.getJ() + m].setEnabled(false);
-                                arrayBotones[boton.getI() + k][boton.getJ() + m].
-                                        setText(String.valueOf(arrayBotones[boton.getI() + k][boton.getJ() + m].getNumeroMinasAlrededor()));
+                                arrayBotones[boton.getI() + k][boton.getJ() + m].setText(String.valueOf(arrayBotones[boton.getI() + k][boton.getJ() + m].getNumeroMinasAlrededor()));
                             }
                         }
                     }
