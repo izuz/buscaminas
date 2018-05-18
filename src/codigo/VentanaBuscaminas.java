@@ -71,20 +71,20 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
                 miBoton.setFocusPainted(false);
             }
         }
-         if (miBoton.mina == 1) {
-                for (int i = 0; i < filas; i++) {
-                    for (int j = 0; j < columnas; j++) {
-                        arrayBotones[i][j].setEnabled(false);
-                        arrayBotones[i][j].setText(String.valueOf(arrayBotones[i][j].numeroMinasAlrededor));
-                        if(arrayBotones[i][j].mina==1){
-                            arrayBotones[i][j].setIcon(bomba);
-                        }
-//                        if(arrayBotones[i][j].numeroMinasAlrededor==0){
-//                            arrayBotones[i][j].setText("");
-//                        }
+        if (miBoton.mina == 1) {
+            for (int i = 0; i < filas; i++) {
+                for (int j = 0; j < columnas; j++) {
+                    arrayBotones[i][j].setEnabled(false);
+                    arrayBotones[i][j].setText(String.valueOf(arrayBotones[i][j].numeroMinasAlrededor));
+                    if (arrayBotones[i][j].mina == 1) {
+                        arrayBotones[i][j].setIcon(bomba);
+                    }
+                    if (arrayBotones[i][j].mina == 1) {
+                        arrayBotones[i][j].setText("");
                     }
                 }
-         }
+            }
+        }
     }
 
     private void cambia(Boton boton) {
@@ -120,7 +120,8 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
             //TODO hay que hacer una version que chequee si en la casilla seleccionada ya hay una mina, 
             //porque en ese caso tiene que buscar otra
             arrayBotones[f][c].setMina(1);
-//            arrayBotones[f][c].setIcon(bomba);
+            arrayBotones[f][c].setText("");
+//            arrayBotones[f][c].setIcon(bomba); oculto las bombas
         }
     }
 
@@ -139,24 +140,15 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
                 }
                 arrayBotones[i][j].setNumeroMinasAlrededor(minas);
 
-                //TODO comentar la siguiente parte para que no aparezcan los numeros al iniciar la partida
-//                if (arrayBotones[i][j].isEnabled()) {
-//                    if (arrayBotones[i][j].getMina() == 0) {
-//                        arrayBotones[i][j].setText(String.valueOf(minas));
-//                    }
-//                }
                 minas = 0;
 
-//                if(arrayBotones[i][j].getMina() == 1 ){
-//                    arrayBotones[i][j].setText("");
-//                }
                 if (arrayBotones[i][j].getNumeroMinasAlrededor() == 0) {
                     arrayBotones[i][j].setEnabled(true);
                 }
             }
         }
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
