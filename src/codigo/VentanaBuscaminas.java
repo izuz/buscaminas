@@ -17,7 +17,7 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
 
     int filas = 15;
     int columnas = 20;
-    int numeroMinas = 100;
+    int numeroMinas = 80;
     Icon bandera = new ImageIcon(getClass().getResource("/images/bandera.png"));
     Icon bomba = new ImageIcon(getClass().getResource("/images/bomba.png"));
 
@@ -240,6 +240,7 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         reiniciar();
+        jDialog1.dispose();
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
